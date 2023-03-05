@@ -1,0 +1,35 @@
+.todo_list_section {
+    @apply bg-slate-900 mt-3 mx-3 p-3 w-2/3 rounded-lg min-w-[350px] min-h-[760px] mb-3;
+}
+
+.todo_list_section_title {
+    @apply text-white text-left font-bold text-3xl border-b border-slate-500 mb-3 pb-3;
+}
+
+.todo_list_article {
+    @apply justify-center border-2 border-slate-400 rounded-xl min-w-full mx-auto my-3 p-5;
+}
+
+.todo_list_group {
+    @apply flex flex-row justify-between;
+}
+
+.todo_list_title {
+    @apply text-white text-left font-bold text-3xl pb-3;
+}
+
+.todo_list_due_date {
+    @apply text-white text-left text-2xl mb-3 pb-3;
+}
+
+.todo_list_description {
+    @apply text-white text-left text-3xl my-3 pb-3;
+}
+
+.button_todo {
+    @apply bg-yellow-400 text-black text-lg w-28 font-bold p-3 rounded-xl;
+}
+
+.button_delete {
+    @apply bg-red-600 text-white text-lg w-28 font-bold p-3 rounded-xl;
+}
