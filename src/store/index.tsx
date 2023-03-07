@@ -35,21 +35,17 @@ const todoSlice = createSlice({
     },
     reducers: {
         setTitle: (state: Infos, action: SetInfos): void => {
-            console.log(action.payload)
             state.todo.title = action.payload
         },
         setDescription: (state: Infos, action: SetInfos): void => {
-            console.log(action.payload)
             state.todo.description = action.payload
         },
         setDueDate: (state: Infos, action: SetInfos): void => {
-            console.log(action.payload)
             state.todo.dueDate = action.payload.split('-').reverse().join('/')
         },
         sendTodo: (state: Infos): void => {
             state.todo.id++
             state.todos = [...state.todos, (state.todo)]
-            console.log(state.todos)
         },
         todoDone: (state: Infos, action: EventInfos): void => {
             const id: number = state.todos.findIndex((todo: { id: number }) => (todo.id) === action.payload)
