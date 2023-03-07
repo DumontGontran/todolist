@@ -1,5 +1,5 @@
 .todo_list_section {
-    @apply bg-slate-900 mt-3 mx-3 p-3 w-2/3 rounded-lg min-w-[350px] min-h-[760px] mb-3;
+    @apply bg-slate-900 mt-3 justify-center mx-3 p-3 w-auto lg:w-2/3 rounded-lg min-w-[340px] min-h-[760px] mb-3;
 }
 
 .todo_list_section_title {
@@ -11,19 +11,23 @@
 }
 
 .todo_list_group {
+    @apply flex flex-col lg:flex-row lg:justify-between;
+}
+
+.todo_list_group-buttons {
     @apply flex flex-row justify-between;
 }
 
 .todo_list_title {
-    @apply text-white text-left font-bold text-[1.875rem];
+    @apply text-white break-all text-left font-bold text-[1.875rem];
 }
 
 .todo_list_due_date {
-    @apply text-white text-left text-2xl mb-5 mt-3 px-3 rounded-lg;
+    @apply flex items-center text-white w-max text-center text-2xl mb-5 mt-3 px-3 rounded-lg;
 }
 
 .todo_list_description {
-    @apply text-white text-left text-3xl my-3 pb-3;
+    @apply text-white break-all text-left text-3xl my-3 pb-3;
 }
 
 .button_todo {

@@ -1,5 +1,5 @@
 .todo_form_section {
-    @apply bg-slate-900 mt-3 ml-3 p-3 w-1/3 rounded-lg min-w-[350px] max-h-[760px];
+    @apply bg-slate-900 mt-3 ml-3 mx-3 p-3 w-auto lg:w-1/3 rounded-lg min-w-[340px] max-h-[760px];
 }
 
 .todo_form_section_title {

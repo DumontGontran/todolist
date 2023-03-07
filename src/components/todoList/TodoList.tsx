@@ -25,7 +25,7 @@ const TodoList = () => {
                         <p className="todo_list_due_date bg-slate-500">{todo.dueDate}</p>
                     </div>
                     <p className="todo_list_description">{todo.description}</p>
-                    <div className="todo_list_group">
+                    <div className="todo_list_group-buttons">
                         <button className="button_todo" onClick={(event) => {
                             event.preventDefault()
                             dispatch({
