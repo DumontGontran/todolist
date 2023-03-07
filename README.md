@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+Getting Started Frontend
+In the project directory, install dependencies:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+`npm install react --template typescript`
+`npm install react-redux @reduxjs/toolkit`
 
 ## Available Scripts
 
