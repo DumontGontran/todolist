@@ -10,16 +10,31 @@ const TodoList = () => {
     return (
         <section className="todo_list_section">
             <h2 className="todo_list_section_title">Todos</h2>
-            {todos && todos.map((todo: any, index: number) =>
-                <article key={index} className="todo_list_article">
+            {todos && todos.map((todo: any) =>
+                <article key={todo.id} className="todo_list_article">
                     <div className="todo_list_group border-b border-slate-500">
                         <span className="todo_list_title">{todo.title}</span>
                         <p className="todo_list_due_date">{todo.dueDate}</p>
                     </div>
                     <p className="todo_list_description">{todo.description}</p>
                     <div className="todo_list_group">
-                        <button className="button_todo" onClick={(event) => dispatch({ type: 'Todo/todoDone' })}>Done</button>
-                        <button className="button_delete" onClick={(event) => dispatch({ type: 'Todo/todoDelete' })}>Delete</button>
+                        <button className="button_todo" onClick={(event) => {
+                            event.preventDefault()
+                            dispatch({
+                                type: 'Todo/todoDone',
+                                payload: todo.id
+                            })
+                            event.currentTarget.style.backgroundColor = 'green'
+                            event.currentTarget.style.color ='white'
+                            event.currentTarget.innerText = 'Done' 
+                        }}>To Do</button>
+                        <button className="button_delete" onClick={(event) => {
+                            event.preventDefault()
+                            dispatch({
+                                type: 'Todo/todoDelete',
+                                payload: todo.id
+                            })
+                        }}>Delete</button>
                     </div>
                 </article>
             )}
