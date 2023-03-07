@@ -6,7 +6,6 @@ import './TodoList.css';
 const TodoList = () => {
     const dispatch = useDispatch()
     const todos: Array<any> = useSelector(() => store.getState().Todo.todos)
-    const todayDate = new Date().toLocaleDateString('fr')
 
     interface Infos {
             id: number,
@@ -23,12 +22,7 @@ const TodoList = () => {
                 <article key={todo.id} className="todo_list_article">
                     <div className="todo_list_group border-b border-slate-500">
                         <span className="todo_list_title">{todo.title}</span>
-                        {todayDate > todo.dueDate &&
-                        <p className="todo_list_due_date bg-green-600">{todo.dueDate}</p>}
-                        {todayDate === todo.dueDate &&
-                        <p className="todo_list_due_date bg-yellow-500">{todo.dueDate}</p>}
-                        {todayDate < todo.dueDate &&
-                        <p className="todo_list_due_date bg-red-700">{todo.dueDate}</p>}
+                        <p className="todo_list_due_date bg-slate-500">{todo.dueDate}</p>
                     </div>
                     <p className="todo_list_description">{todo.description}</p>
                     <div className="todo_list_group">
