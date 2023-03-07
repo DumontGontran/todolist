@@ -14,14 +14,14 @@ const TodoForm = () => {
                 }}>
                 <div className="todo_form_group">
                     <label htmlFor="title" className="todo_form_label">Title: (required)</label>
-                    <input type="text" name="title" id="title" required onChange={(event) => dispatch({
+                    <input type="text" name="title" id="title" required maxLength={26} onChange={(event) => dispatch({
                         type: 'Todo/setTitle',
                         payload: event.target.value
                     })} />
                 </div>
                 <div className="todo_form_group">
                     <label htmlFor="description" className="todo_form_label">Description: (required)</label>
-                    <textarea name="description" id="description" required onChange={(event) => dispatch({
+                    <textarea name="description" id="description" required maxLength={255} onChange={(event) => dispatch({
                         type: 'Todo/setDescription',
                         payload: event.target.value
                     })}></textarea>
