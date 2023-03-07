@@ -26,7 +26,7 @@ const todoSlice = createSlice({
     initialState: {
         todos: [],
         todo: {
-            id: -1,
+            id: 0,
             isDone: false,
             title: '',
             description: '',
