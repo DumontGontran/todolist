@@ -1,7 +1,7 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 interface Infos {
-    todos: any
+    todos: Array<any>
     todo: {
         id: number,
         isDone: boolean,
@@ -53,16 +53,15 @@ const todoSlice = createSlice({
         },
         todoDone: (state: Infos, action: EventInfos): void => {
             const id: number = state.todos.findIndex((todo: { id: number }) => (todo.id) === action.payload)
-            console.log('index of todo button: ', id)
-
-            if (id === action.payload) {
-                state.todos[action.payload].isDone = true
-                console.log(state.todos[action.payload].isDone)
-            }
+        
+            state.todos[id].isDone = true
         },
         todoDelete: (state: Infos, action: EventInfos): void => {
-            if (state.todos[action.payload].isDone === false) {
+            const id: number = state.todos.findIndex((todo: { id: number }) => (todo.id) === action.payload)
+
+            if (state.todos[id].isDone === false) {
                 let confirm: boolean = window.confirm("Do you really want to delete this task ?")
+                
                 if (confirm === true) {
                     state.todos = [...state.todos.filter((todo: { id: number }) => todo.id !== action.payload)]
                 }
