@@ -15,11 +15,11 @@
 }
 
 .todo_list_title {
-    @apply text-white text-left font-bold text-3xl pb-3;
+    @apply text-white text-left font-bold text-[1.875rem];
 }
 
 .todo_list_due_date {
-    @apply text-white text-left text-2xl mb-3 pb-3;
+    @apply text-white text-left text-2xl mb-5 mt-3 px-3 rounded-lg;
 }
 
 .todo_list_description {
