@@ -11,12 +11,12 @@ interface Infos {
     }
 }
 
-interface SetInfos {
+interface OnChangeInfos {
     type: string,
     payload: string
 }
 
-interface EventInfos {
+interface OnClickInfos {
     type: string,
     payload: number
 }
@@ -34,25 +34,25 @@ const todoSlice = createSlice({
         }
     },
     reducers: {
-        setTitle: (state: Infos, action: SetInfos): void => {
+        setTitle: (state: Infos, action: OnChangeInfos): void => {
             state.todo.title = action.payload
         },
-        setDescription: (state: Infos, action: SetInfos): void => {
+        setDescription: (state: Infos, action: OnChangeInfos): void => {
             state.todo.description = action.payload
         },
-        setDueDate: (state: Infos, action: SetInfos): void => {
+        setDueDate: (state: Infos, action: OnChangeInfos): void => {
             state.todo.dueDate = action.payload.split('-').reverse().join('/')
         },
         sendTodo: (state: Infos): void => {
             state.todo.id++
             state.todos = [...state.todos, (state.todo)]
         },
-        todoDone: (state: Infos, action: EventInfos): void => {
+        todoDone: (state: Infos, action: OnClickInfos): void => {
             const id: number = state.todos.findIndex((todo: { id: number }) => (todo.id) === action.payload)
         
             state.todos[id].isDone = true
         },
-        todoDelete: (state: Infos, action: EventInfos): void => {
+        todoDelete: (state: Infos, action: OnClickInfos): void => {
             const id: number = state.todos.findIndex((todo: { id: number }) => (todo.id) === action.payload)
 
             if (state.todos[id].isDone === false) {
