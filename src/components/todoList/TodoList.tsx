@@ -23,11 +23,11 @@ const TodoList = () => {
                 <article key={todo.id} className="todo_list_article">
                     <div className="todo_list_group border-b border-slate-500">
                         <span className="todo_list_title">{todo.title}</span>
-                        {todayDate < todo.dueDate &&
+                        {todayDate > todo.dueDate &&
                         <p className="todo_list_due_date bg-green-600">{todo.dueDate}</p>}
                         {todayDate === todo.dueDate &&
                         <p className="todo_list_due_date bg-yellow-500">{todo.dueDate}</p>}
-                        {todayDate > todo.dueDate &&
+                        {todayDate < todo.dueDate &&
                         <p className="todo_list_due_date bg-red-700">{todo.dueDate}</p>}
                     </div>
                     <p className="todo_list_description">{todo.description}</p>
