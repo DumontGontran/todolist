@@ -5,12 +5,20 @@ import './TodoList.css';
 
 const TodoList = () => {
     const dispatch = useDispatch()
-    const todos = useSelector(() => store.getState().Todo.todos)
+    const todos: Array<any> = useSelector(() => store.getState().Todo.todos)
+
+    interface Infos {
+            id: number,
+            isDone: boolean,
+            title: string,
+            description: string,
+            dueDate: string
+    }
 
     return (
         <section className="todo_list_section">
             <h2 className="todo_list_section_title">Todos</h2>
-            {todos && todos.map((todo: any) =>
+            {todos && todos.map((todo: Infos) =>
                 <article key={todo.id} className="todo_list_article">
                     <div className="todo_list_group border-b border-slate-500">
                         <span className="todo_list_title">{todo.title}</span>
@@ -25,8 +33,8 @@ const TodoList = () => {
                                 payload: todo.id
                             })
                             event.currentTarget.style.backgroundColor = 'green'
-                            event.currentTarget.style.color ='white'
-                            event.currentTarget.innerText = 'Done' 
+                            event.currentTarget.style.color = 'white'
+                            event.currentTarget.innerText = 'Done'
                         }}>To Do</button>
                         <button className="button_delete" onClick={(event) => {
                             event.preventDefault()
